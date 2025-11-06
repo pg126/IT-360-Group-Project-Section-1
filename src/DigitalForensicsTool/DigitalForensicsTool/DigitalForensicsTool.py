@@ -12,18 +12,6 @@ def getMAC():
     mac = (':'.join(re.findall('..', '%012x' % uuid.getnode())))
     return mac
 
-def get_usb_devices():
-    try:
-        command = [
-            "powershell",
-            "-Command",
-            "Get-PnpDevice -Class 'USB' | Where-Object { $_.Status -eq 'OK' } | Select-Object -Property Name,InstanceId"
-        ]
-        result = subprocess.check_output(command, shell=True)
-        return result.decode(errors="ignore")
-    except Exception as e:
-        return f"Error: {e}"
-
 def dashboard():
     while True:
         print("Digital Forensics Tool Dashboard")
@@ -31,7 +19,6 @@ def dashboard():
         print("(1) Get IP Address")
         print("(2) Get MAC Address")
         print("(3) Exit")
-        print("(4) List USB Devices")
 
         choice = input("Pick an option: ")
 
@@ -54,13 +41,6 @@ def dashboard():
             print("Exiting...")
             print(" ")
             break
-        elif choice == "4":
-
-            usb_devices = get_usb_devices()
-            print(" ")
-            print("Exiting...")
-            print(" ")
-            break
 
         else:
             print(" ")
@@ -71,3 +51,4 @@ def dashboard():
 if __name__ == "__main__":
     
     dashboard()
+

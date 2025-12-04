@@ -21,14 +21,13 @@ No external Python packages are required.
 
 ## How to Run
 
-1. Install Python on Windows.  
-2. Open Command Prompt and navigate to the folder containing the script.  
-3. Run the tool with:
+1. Install Python on Windows.
+2. Download the Digital Forensics Tool Python File.
+3. Open Command Prompt and navigate to the folder containing the Python File.
+4. Run the tool with:
 
 py DigitalForensicsTool.py
 
-csharp
-Copy code
 
 ## Purpose of the Project
 
@@ -36,4 +35,4 @@ The goal of this tool is to automate basic forensic data collection on a Windows
 
 ## Video Demonstration
 
-Insert your video link here.
+
